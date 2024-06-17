@@ -48,9 +48,7 @@ def outliers(df, column):
 
     return df
 
-columns_to_clean = ["fixed acidity", "residual sugar", "chlorides",
-                    "free sulfur dioxide", "total sulfur dioxide", 
-                    "density", "sulphates"]
+columns_to_clean = df.drop(columns=["quality"])
 
 for column in columns_to_clean:
     df = outliers(df, column)
@@ -108,6 +106,19 @@ y_pred_pls_reduced = pls_model_reduced.predict(X_test)
 
 pls_rmse_reduced = np.sqrt(mean_squared_error(y_test, y_pred_pls_reduced))
 pls_r2_reduced = r2_score(y_test, y_pred_pls_reduced)
+
+plt.figure(figsize=(12, 6))
+
+plt.scatter(range(len(y_test)), y_test, color='blue', label='Actual', marker='o')
+plt.scatter(range(len(y_test)), y_pred_pls_reduced, color='red', label='Predicted', marker='x')
+plt.xlabel('Index')
+plt.ylabel('Quality')
+plt.title('Actual vs Predicted Quality (Index-wise) - PLS Reduced Components')
+plt.legend()
+
+plt.tight_layout()
+plt.show()
+
 
 print("\nPLS RMSE:", pls_rmse)
 print("PLS R2 score:", pls_r2)

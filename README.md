@@ -1,3 +1,10 @@
-In this repository, I've put together some regression exercises using various datasets.
+### Regression Exercises
 
-I've tackled steps like data preprocessing, visualization and different regression algorithms. Each file showcases how I've applied regression models from getting the data ready to evaluating the results and making predictions.
+This repository contains a collection of small regression projects. Each project focuses on the following steps:
+
+* Data Preprocessing: Cleaning and preparing datasets for analysis.
+* Feature Engineering: Creating new features and transforming the data for better model performance.
+* Exploratory Data Analysis (EDA): Investigating relationships and visualizing data to gain insights into the regression process.
+* Modeling: Applying various regression algorithms to the data.
+  
+These projects aim to explore different aspects of regression, from feature engineering to detailed performance analysis with various regression techniques.
